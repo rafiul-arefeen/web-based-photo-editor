@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta property="og:title" content="Photo Editor">
+    <meta property="og:description" content="Web-based photo editor">
+    <meta property="og:image" content="/images/preview.png">
+    <meta charset="utf-8">
+    <title>Photo Editor</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link href="libraries/cropperjs/cropper.css" rel="stylesheet">
+    <script src="libraries/cropperjs/cropper.js"></script>
+</head>
+
+<body>
+    <div class="container disable">
+        <h2>Photo Editor</h2>
+        <div class="wrapper">
+            <div class="editor-panel">
+                <div class="editor-panel-content">
+                    <div class="crop">
+                        <label class="title">Crop</label>
+                        <div class="crop-options">
+                            <div class="button-group">
+                                <button id="cropButton"><i class="fa-solid fa-crop"></i></button>
+                                <button id="confirmCropButton" disabled>Crop</button>
+                            </div>
+                            <div class="rotation-control">
+                                <label for="rotation-slider">Rotate</label>
+                                <input id="rotation-slider" type="range" value="0" min="-90" max="90" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <label class="title">Filters</label>
+                        <div class="slider">
+                            <label for="brightness-slider">Brightness</label>
+                            <input id="brightness-slider" type="range" value="100" min="0" max="200">
+                            <label for="contrast-slider">Contrast</label>
+                            <input id="contrast-slider" type="range" value="100" min="0" max="200">
+                            <label for="saturation-slider">Saturation</label>
+                            <input id="saturation-slider" type="range" value="100" min="0" max="200">
+                            <label for="inversion-slider">Inversion</label>
+                            <input id="inversion-slider" type="range" value="0" min="0" max="100">
+                            <label for="grayscale-slider">Grayscale</label>
+                            <input id="grayscale-slider" type="range" value="0" min="0" max="100">
+                            <label for="blur-slider">Blur</label>
+                            <input id="blur-slider" type="range" value="0" min="0" max="10">
+                            <label for="sepia-slider">Sepia</label>
+                            <input id="sepia-slider" type="range" value="0" min="0" max="100">
+                        </div>
+                    </div>
+                    <div class="rotate">
+                        <label class="title">Rotate & Flip</label>
+                        <div class="options">
+                            <button id="left"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button id="right"><i class="fa-solid fa-rotate-right"></i></button>
+                            <button id="horizontal"><i class='bx bx-reflect-vertical'></i></button>
+                            <button id="vertical"><i class='bx bx-reflect-horizontal'></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="preview-img">
+                <img id="placeholder-img" src="/images/placeholder.png" alt="preview-img">
+            </div>
+        </div>
+        <div class="controls">
+            <button class="reset-filter">Reset Settings</button>
+            <div class="row">
+                <input type="file" class="file-input" accept="image/*" hidden>
+                <button class="choose-img">Choose Image</button>
+                <button class="save-img">Save Image</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
